@@ -30,10 +30,16 @@ questions.forEach(function(question) {
     });
 });
 
-async function getData() {
-    const response = await fetch('https://apilist.fun/api/food-api')
-    const data = await response.json()
-}
+// async function getData() {
+    // const response = await fetch('https://apilist.fun/api/food-api')
+    // const data = await response.json()
 
+var request = newXMLHttpRequest (); 
+request.open ('GET', 'https://api.themoviedb.org/3/movie/550?api_key=a26ce62c6e6cd655c98fc5e5ec229567', true);
+request.onload = function (){
+    // JSON data begins 
+    var data = JSON.parse (this.response);
+    
+}
 
 
