@@ -1,20 +1,36 @@
 
 var questions = [
     {
-        question: "placeholder question 1",
-        answers: ["place holder1", "place holder2", "place holder3", "place holder4"]
+        question: "What do you want to eat?",
+        answers: ["Chicken", "Beef", "Seafood", "Vegetarian"]
     },
     {
-        question: "placeholder question 2",
-        answers: ["place holder1", "place holder2", "place holder3", "place holder4"]
+        question: "What type of cuisine would you like tonight?",
+        answers: ["Chinese", "American", "Italian", "Spanish"]
     },
     {
-        question: "placeholder question 3",
-        answers: ["place holder1", "place holder2", "place holder3", "place holder4"]
+        question: "What category do you enjoy the most?",
+        answers: ["Pork", "Pork", "Lamb", "Breakfast"]
     },
     {
-        question: "placeholder question 4",
-        answers: ["place holder1", "place holder2", "place holder3", "place holder4"]
+        question: "What are you in the mood for?",
+        answers: ["Low calorie", "Meat", "Fusion", "Soup"]
+    },
+    {
+        question: "Question 5?",
+        answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"]
+    },
+    {
+        question: "Question 6",
+        answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"]
+    },
+    {
+        question: "Question 7",
+        answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"]
+    },
+    {
+        question: "Question 8",
+        answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"]
     },
 ]
 
