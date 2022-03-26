@@ -46,16 +46,22 @@ questions.forEach(function(question) {
     });
 });
 
-// async function getData() {
-    // const response = await fetch('https://apilist.fun/api/food-api')
-    // const data = await response.json()
-
-var request = newXMLHttpRequest (); 
-request.open ('GET', 'https://api.themoviedb.org/3/movie/550?api_key=a26ce62c6e6cd655c98fc5e5ec229567', true);
-request.onload = function (){
-    // JSON data begins 
-    var data = JSON.parse (this.response);
+function getApi() {
+    var requestUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=68846c14fbb9ad592255787949832875&language=en-US&page=1';
+    fetch(requestUrl) 
+        .then(function(response) {
+          return response.json();
+        });
     
-}
+    }
+    getApi()
 
-
+function getApi() {
+    var requestUrl = 'https://themealdb.com/api/json/v1/1/random.php'; 
+    fetch(requestUrl) 
+      .then(function(response) {
+        return response.json();
+      });
+  
+  }
+  getApi()
