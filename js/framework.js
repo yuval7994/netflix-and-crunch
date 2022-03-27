@@ -17,20 +17,8 @@ var questions = [
         answers: ["Low calorie", "Meat", "Fusion", "Soup"]
     },
     {
-        question: "Question 5?",
-        answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"]
-    },
-    {
-        question: "Question 6",
-        answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"]
-    },
-    {
-        question: "Question 7",
-        answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"]
-    },
-    {
-        question: "Question 8",
-        answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"]
+        question: "Pick a number",
+        answers: ["213", "177", "25", "3"]
     },
 ]
 
