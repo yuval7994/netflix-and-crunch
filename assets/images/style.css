@@ -29,6 +29,7 @@
     background-color: red;
     padding: 10px;
 }
+
 .question-1-gallery {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -38,17 +39,18 @@
     padding-top: 20px; 
     padding-bottom: 20px;
 }
+
 .question-3-gallery {
     padding-top: 20px; 
     padding-bottom: 20px; 
 }
+
 .question-4-gallery {
     padding-top: 20px; 
     padding-bottom: 20px;
 }
 /* answer choices */
 .choices {
-    
     display: flex; 
     justify-content: space-around;
     margin: 5px; 
@@ -59,15 +61,15 @@
     padding-top: 5px; 
     padding-left: 5px;
     padding-right: 5px;
-   
 }
 
+.flex-line-1.choice-btn {
+    border-radius: 12px;
+}
 
 h1 {
     margin: 0 auto;
     width: 400px;  
-  
-
 }
 h4 {
     text-align: center;
@@ -84,7 +86,6 @@ h4 {
     padding: 5px; 
     justify-content: center;
     align-items: center;
-     
 }
 
 .food-image {
@@ -92,7 +93,9 @@ h4 {
     height: 200px;
     text-align: center;
     justify-content: flex-start;
-    
+    position: relative;
+    left: 30px;
+    border: 3px solid red;
 }
 
 .movie-image {
@@ -100,6 +103,9 @@ h4 {
     height: 200px; 
     text-align: center;
     justify-content: flex-end;
+    position: relative;
+    left: 30px;
+    border: 3px solid red;
 }
 img {
     opacity: 1;
@@ -122,8 +128,7 @@ img:hover {
 
 /*do not delete*/
 .hide {
-    display: none; 
-    
+    display: none;  
 }
 
 .choice-btn {
@@ -143,9 +148,10 @@ img:hover {
     flex-direction: column;
     justify-content: left;
     align-items: flex-start;
-   
-
-
+    margin-left: 10px; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .movies-result {
@@ -156,24 +162,18 @@ img:hover {
     justify-content: center;
     align-items: flex-end;
     font-size: x-large;
-
-
+    margin-left: 10px; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
-
-
-
-
-.food-title {
-    height: 15vh; 
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: x-large;
-
+.movie-result.movies-result {
+    margin-left: 10px; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-bottom: 10px;
 }
-
 
 /* smaller screen */ 
 @media screen and (max-width: 980px){
@@ -186,8 +186,8 @@ img:hover {
         background-color: white;
         font-size: x-large;
         text-align: center;
-
     }
+
     .flex-line-1 {
         display: flex;
         flex-flow: wrap; 
