@@ -144,4 +144,3 @@ var getFoodInfo = async function (category, area, ingredient) {
 };
 
 
-

@@ -11,8 +11,8 @@
  <body>
     <div class="start-page">
         <div id="start-screen" class="start">
-          <h1> <img src="/Users/emily/Desktop/recipe-generator/recipe-generator/assets/images/logo.png"> </h1></h1>
-          <h3>Complete this quiz to determine your cinematic combo</h3>
+          <h1 class="header"><img src="/Users/emily/Desktop/recipe-generator/recipe-generator/assets/images/logo.png"> </h1>
+          <h4>Complete this quiz to determine your cinematic combo. Choose your answer by selecting the box with the choice you want. </h4>
     </div>
 
 <!-- question 1 and answers-->
@@ -20,38 +20,83 @@
     <section>
         <div>
             <h2 class ="flex-center" id='question1-title'> </h2>
-            <div id="category" class="choices">    
+            <ul class="question-1-gallery">
+                <li>  
+                    <img src="/Users/emily/Desktop/recipe-generator/recipe-generator/assets/images/question-1/chicken .png">
+                    <img src="/Users/emily/Desktop/recipe-generator/recipe-generator/assets/images/question-1/beef.jpeg">
+                    <img src="/Users/emily/Desktop/recipe-generator/recipe-generator/assets/images/question-1/salmon.jpeg">
+                    <img src="assets/images/question-1/veggies.jpeg">
+    
+                </li>
+            </ul> 
+            <div id="category" class="choices">   
+                
             </div>
         </div>
         </section>
-</main>
+       
+
 <!-- 3/24 question 2 and answers-->
-<main>
+
     <section id="question-2">
         <div>
             <h2 class ="flex-center" id='question2-title'> </h2>
+            <ul class="question-2-gallery">
+                <li>  
+                    <img src="/Users/emily/Desktop/recipe-generator/recipe-generator/assets/images/question-2/chinese.jpg">
+                    <img src="assets/images/question-2/american.jpeg">
+                    <img src="assets/images/question-2/italian.png">
+                    <img src="assets/images/question-2/spanish.jpeg">
+        
+                </li>
+            </ul> 
             <div id="area" class="choices">    
             </div>
         </div>
     </section>
-</main>
+    
+
 <!-- 3/24 question 3 and answers -->
-<main>
+
+    
     <section id="question-3">
         <div>
             <h2 class ="flex-center" id='question3-title'> </h2>
+            <ul class="question-3-gallery">
+                <li>  
+                    <img src="/Users/emily/Desktop/recipe-generator/recipe-generator/assets/images/question-3/sugar.jpeg">
+                    <img src="/Users/emily/Desktop/recipe-generator/recipe-generator/assets/images/question-3/garlic.jpeg">
+                    <img src="/Users/emily/Desktop/recipe-generator/recipe-generator/assets/images/question-3/lemon.jpeg">
+                    <img src="/Users/emily/Desktop/recipe-generator/recipe-generator/assets/images/question-3/spaghetti.jpeg">
+        
+                </li>
+            </ul> 
             <div id="ingredient" class="choices">    
             </div>
         </div>
         </section>
-</main>
+        
 
-</main>
+
+
+
+
+
+
+
 <!-- question 4 and answers-->
-<main>
+
     <section id="question-4">
         <div>
             <h2 class ="flex-center" id='question4-title'> </h2>
+            <ul class="question-4-gallery">
+                <li>
+                    <img src="/Users/emily/Desktop/recipe-generator/recipe-generator/assets/images/question-4/213.png">
+                    <img src="assets/images/question-4/177.png">
+                    <img src="assets/images/question-4/25.png">
+                    <img src="assets/images/question-4/3.png">
+                </li>
+            </ul>
             <div id="movieNumber" class="choices">    
             </div>
         </div>
@@ -59,11 +104,12 @@
 </main>
 
 <div id="results" class="hide">
-    <h2>Nightly Plan</h2>
+    <h2>Your Plan for tonight: </h2>
  <div>
-     <div id="food-result"></div>
-        <p>Paired with</p>
-     <div id="movie-result"></div>
+     <div id="food-result"></div> 
+        <h3>Paired with</h3>
+        <div id="movie-result"></div>
+    
 
 </div>
 </div>
