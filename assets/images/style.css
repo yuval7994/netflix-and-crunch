@@ -69,14 +69,15 @@ h4 {
     width: 300px; 
     height: 200px;
     text-align: center;
-    justify-content: center;
+    justify-content: flex-start;
+    
 }
 
 .movie-image {
     width: 300px; 
     height: 200px; 
     text-align: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
 img {
     opacity: 1;
@@ -100,7 +101,7 @@ img:hover {
 /*do not delete*/
 .hide {
     display: none; 
-    justify-content: center;
+    
 }
 
 .choice-btn {
@@ -111,11 +112,46 @@ img:hover {
     box-shadow: 0px 5px 35px 0px rgba(50, 50, 93, 0.17);
 }
 
-.food-result {
+
+/* results screen */ 
+.foods-result {
+    font-size: x-large; 
+    height: 15vh; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+   
+
+
+}
+
+.movies-result {
+   
+    height: 15vh; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
     font-size: x-large;
 
 
 }
+
+
+
+
+
+.food-title {
+    height: 15vh; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+
+}
+
 
 /* smaller screen */ 
 @media screen and (max-width: 980px){

@@ -14,7 +14,7 @@ var questions = [
 
     {
         question: "Pick a number",
-        answers: ["213", "177", "25", "3"]
+        answers: ["13", "59", "43", "93"]
     },
 ]
 
