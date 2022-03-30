@@ -18,59 +18,81 @@ var questions = [
     },
 ]
 
+var choices = {
+    category: "", 
+    area: "",
+    ingredient: "", 
+    movieNumber: "",
+} 
 
-questions.forEach(function (question) {
-    console.log(question.question)
-    for (let i = 0; i < question.answers.length; i++) {
-        const answer = question.answers[i];
-        console.log(answer)
-    }
-    question.answers.forEach(function (answer) {
-        console.log(answer)
-    });
-});
+function makeChoice(choice, question){
+    choices[question] = choice
+    console.log(choices); 
+    const {category, area, ingredient, movieNumber} = choices
+    if (category && area && ingredient && movieNumber) {
+       getResults() 
+    } 
+}
 
-/*
-          <div class ="flex-line-1">
-                <span>
-                    <img class="question-1" src = "assets/images/veggies.jpeg">
-                    <h3 class="card-header text-lowercase">Pick a number</h3>
-                </span>
-            </div>  
-*/
+// defining behavior for results 
+async function getResults() {
+    var foodResult = await getFoodInfo(choices.category, choices.area, choices.ingredient)
+    var movieResult = await getMovieInfo(choices.movieNumber)
+    var foodResultElement = document.getElementById('food-result')
+    var movieResultElement = document.getElementById('movie-result')
+    var foodTitleElement = document.createElement('h3')
+        foodTitleElement.className = "food-title"
+        foodTitleElement.innerHTML=foodResult.strMeal
+    var movieTitleElement = document.createElement('h3')
+        movieTitleElement.className = "movie-title"
+        movieTitleElement.innerHTML=movieResult.fullTitle
+    var foodImageElement = document.createElement('img')
+        foodImageElement.className = "food-image"
+        foodImageElement.src=foodResult.strMealThumb
+    var movieImageElement = document.createElement('img')
+        movieImageElement.className = "movie-image"
+        movieImageElement.src=movieResult.image
+    foodResultElement.appendChild(foodTitleElement)
+    foodResultElement.appendChild(foodImageElement)
+    movieResultElement.appendChild(movieTitleElement)
+    movieResultElement.appendChild(movieImageElement)
+    document.getElementById('results').classList.remove('hide')
+}
+
+
 const questionOne = questions[0]
 const questionOneTitleElement = document.getElementById('question1-title')
 questionOneTitleElement.innerHTML = questionOne.question
-const questionOneChoicesElement = document.getElementById('choices-1')
+const questionOneChoicesElement = document.getElementById('category')
 questionOne.answers.forEach(answer => {
     const answerContainer = document.createElement('div')
-    answerContainer.className = "flex-line-1"
+    answerContainer.className = "flex-line-1 choice-btn"
     answerContainer.innerHTML = `<h3 class="card-header text-lowercase">${answer}</h3>`
-    answerContainer.onclick 
+    answerContainer.onclick = () => makeChoice(answer, questionOneChoicesElement.id)
     questionOneChoicesElement.appendChild(answerContainer)
 }
 )
 const questionTwo = questions[1]
 const questionTwoTitleElement = document.getElementById('question2-title')
 questionTwoTitleElement.innerHTML = questionTwo.question
-const questionTwoChoicesElement = document.getElementById('choices-2')
+const questionTwoChoicesElement = document.getElementById('area')
 questionTwo.answers.forEach(answer => {
     const answerContainer = document.createElement('div')
-    answerContainer.className = "flex-line-1"
+    answerContainer.className = "flex-line-1 choice-btn"
     answerContainer.innerHTML = `<h3 class="card-header text-lowercase">${answer}</h3>`
-    answerContainer.onclick 
+    answerContainer.onclick = () => makeChoice(answer, questionTwoChoicesElement.id)
     questionTwoChoicesElement.appendChild(answerContainer)
 }
 )
 const questionThree = questions[2]
 const questionThreeTitleElement = document.getElementById('question3-title')
 questionThreeTitleElement.innerHTML = questionThree.question
-const questionThreeChoicesElement = document.getElementById('choices-3')
+const questionThreeChoicesElement = document.getElementById('ingredient')
 questionThree.answers.forEach(answer => {
     const answerContainer = document.createElement('div')
-    answerContainer.className = "flex-line-1"
+    answerContainer.className = "flex-line-1 choice-btn"
     answerContainer.innerHTML = `<h3 class="card-header text-lowercase">${answer}</h3>`
-    answerContainer.onclick 
+    answerContainer.onclick = () => makeChoice(answer, questionThreeChoicesElement.id)
     questionThreeChoicesElement.appendChild(answerContainer)
 }
 
@@ -79,23 +101,20 @@ questionThree.answers.forEach(answer => {
 const questionFour = questions[3]
 const questionFourTitleElement = document.getElementById('question4-title')
 questionFourTitleElement.innerHTML = questionFour.question
-const questionFourChoicesElement = document.getElementById('choices-4')
+const questionFourChoicesElement = document.getElementById('movieNumber')
 questionFour.answers.forEach(answer => {
     const answerContainer = document.createElement('div')
-    answerContainer.className = "flex-line-1"
+    answerContainer.className = "flex-line-1 choice-btn"
     answerContainer.innerHTML = `<h3 class="card-header text-lowercase">${answer}</h3>`
-    answerContainer.onclick = () => console.log(getMovieInfo(answer))
+    answerContainer.onclick = () => makeChoice(answer, questionFourChoicesElement.id)
     questionFourChoicesElement.appendChild(answerContainer)
 }
 )
 
-
-// request.send(); 
-
 //IMDB movie API
-var getMovieInfo = function (movieNumber) {
+var getMovieInfo = async function (movieNumber) {
     var apiMovieUrl = 'https://imdb-api.com/en/API/Top250TVs/k_6day5f3p';
-    fetch(
+    return fetch(
         apiMovieUrl
     )
         .then(function (movieResponse) {
@@ -104,34 +123,25 @@ var getMovieInfo = function (movieNumber) {
         .then(function (movieResponse) {
             console.log(movieResponse.items)
             var movie = movieResponse.items.find(movie => movie.rank === movieNumber)
-
-            console.log(movie);
-
-
-
+            return movie;
         })
 
 
 };
 
 // Food Api
-var getfoodInfo = function (category, area, ingredient) {
+var getFoodInfo = async function (category, area, ingredient) {
     var apifoodUrl = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}&a=${area}&i=${ingredient}`;
-    fetch(
+    return fetch(
         apifoodUrl
     )
         .then(function (foodResponse) {
             return foodResponse.json();
-
         })
-      .then(function (foodData) {
-          console.log(foodData)
-          
-
-      })
-
+        .then(function (foodData){
+            return foodData.meals[0];
+        })
 };
-getfoodInfo('Seafood', 'Italian', 'Spaghetti')
 
 
 

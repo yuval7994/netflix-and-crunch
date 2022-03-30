@@ -95,6 +95,19 @@ img:hover {
     color: black; 
 }
 
+/*do not delete*/
+.hide {
+    display: none; 
+}
+
+.choice-btn {
+    cursor: pointer;
+    padding: 10px;
+    border-style: solid;
+    border-radius: 30;
+    box-shadow: 0px 5px 35px 0px rgba(50, 50, 93, 0.17);
+}
+
 /* smaller screen */ 
 @media screen and (max-width: 980px){
     .flex-center {
