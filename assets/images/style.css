@@ -141,7 +141,15 @@ img:hover {
 
 
 /* results screen */ 
+#results {
+    position: relative;
+    height: 300px;
+    top: 20%;
+
+}
 .foods-result {
+    position: absolute;
+    left: 15px;
     font-size: x-large; 
     height: 15vh; 
     display: flex; 
@@ -155,7 +163,8 @@ img:hover {
 }
 
 .movies-result {
-   
+   position: absolute;
+   right: 15px;
     height: 15vh; 
     display: flex; 
     flex-direction: column;
