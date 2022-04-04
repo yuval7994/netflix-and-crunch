@@ -1,4 +1,4 @@
-# recipe-generator
+# Netflix and Crunch 
 Netflix & Crunch is a web based application where users take a quiz to determine what they are going to eat for dinner and what to watch while they enjoy their food. 
 
 USER STORY
