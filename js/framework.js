@@ -1,3 +1,5 @@
+//declaring questions & choices
+
 var questions = [
     {
         question: "What do you want to eat?",
@@ -25,6 +27,7 @@ var choices = {
     movieNumber: "",
 } 
 
+// defining behavior for results 
 
 function makeChoice(choice, question){
     choices[question] = choice
@@ -35,7 +38,7 @@ function makeChoice(choice, question){
     } 
 }
 
-// defining behavior for results 
+
 async function getResults() {
     var foodResult = await getFoodInfo(choices.category, choices.area, choices.ingredient)
     var movieResult = await getMovieInfo(choices.movieNumber)
@@ -60,6 +63,7 @@ async function getResults() {
     document.getElementById('results').classList.remove('hide')
 }
 
+// defining behavior for questions 
 
 const questionOne = questions[0]
 const questionOneTitleElement = document.getElementById('question1-title')
@@ -130,7 +134,7 @@ var getMovieInfo = async function (movieNumber) {
 
 };
 
-// Food Api
+// Food API
 var getFoodInfo = async function (category, area, ingredient) {
     var apifoodUrl = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}&a=${area}&i=${ingredient}`;
     return fetch(
