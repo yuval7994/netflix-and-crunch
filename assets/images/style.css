@@ -26,8 +26,8 @@
     justify-content: center;
     align-items: center;
     font-size: x-large;
-    background-color: red;
     padding: 10px;
+    background-color: red;
 }
 
 .question-1-gallery {
@@ -61,10 +61,7 @@
     padding-top: 5px; 
     padding-left: 5px;
     padding-right: 5px;
-}
-
-.flex-line-1.choice-btn {
-    border-radius: 12px;
+   
 }
 
 h1 {
@@ -137,9 +134,22 @@ img:hover {
     border-style: solid;
     border-radius: 30;
     box-shadow: 0px 5px 35px 0px rgba(50, 50, 93, 0.17);
+    background-color: white;
+    border-radius: 12px;
 }
 
-
+.choice-btn:active {
+    background-color: red;
+}
+.choice-btn:hover {
+    background-color: red;
+}
+.choice-btn:focus {
+    background-color: red;
+}
+.choice-btn:target {
+    background-color: red;
+}
 /* results screen */ 
 #results {
     position: relative;
@@ -195,6 +205,7 @@ img:hover {
         background-color: white;
         font-size: x-large;
         text-align: center;
+        background-color: red;
     }
 
     .flex-line-1 {

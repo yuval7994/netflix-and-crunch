@@ -25,6 +25,7 @@ var choices = {
     movieNumber: "",
 } 
 
+
 function makeChoice(choice, question){
     choices[question] = choice
     console.log(choices); 
